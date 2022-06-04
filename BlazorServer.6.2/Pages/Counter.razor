@@ -1,0 +1,46 @@
+﻿@page "/"
+@page "/counter"
+
+@using WebApp.Models
+@using BootstrapServerSide.Shared.Data
+
+@*
+@inject ProductControlls ProductService
+@inject ProductsService p
+*@
+
+
+
+<h1>@title</h1>
+<button @onclick="GetProduct">拉数据 </button>
+<button @onclick="QueryData"> 拉数据2 </button>
+<button @onclick="QueryData2"> 拉数据3 </button>
+<button @onclick="QueryData3"> 拉数据4</button>
+
+
+<h5>Table - 表格测试1</h5>
+   <DxGrid Data="@products2"
+                CssClass="mw-1100">
+        <Columns>
+            <DxGridDataColumn Caption="编号" FieldName="ProductId" />
+            <DxGridDataColumn Caption="名称" FieldName="Name" />
+            <DxGridDataColumn Caption="价格" FieldName="Price" />
+
+        </Columns>
+    </DxGrid>
+    
+    <br />
+
+
+@if(products2 is null)
+{
+
+    title = "正在载入中...";
+
+}
+
+
+@code
+{
+
+}
